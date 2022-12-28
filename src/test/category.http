@@ -1,0 +1,39 @@
+###
+POST http://localhost:3001/category HTTP/1.1
+Content-Type: application/json
+
+{  "name": "Bebidassad",
+  "description": "Cerveza, Ron, Vodka",
+  "image":  "none"}
+
+###
+POST http://localhost:3001/category HTTP/1.1
+Content-Type: application/json
+
+{  "name": "Cerveza",
+  "description": "Michelada, Chelada",
+  "image":  "none",
+  "parent": "63acbaaaa2f3e867b94a13ef"
+  }
+
+###
+GET http://localhost:3001/category  HTTP/1.1
+
+
+###
+GET http://localhost:3001/category/63acbaaaa2f3e867b94a13ef  HTTP/1.1
+
+
+###
+PUT http://localhost:3001/category/63acbba13bd411f44a60d04f HTTP/1.1
+Content-Type: application/json
+
+{  "name": "Cerveza",
+  "description": "Michelada,Chelada,Caguama",
+  "image":  "https://cdn-icons-png.flaticon.com/512/4343/4343893.png",
+  "parent": "63acbaaaa2f3e867b94a13ef"}
+
+
+
+###
+DELETE  http://localhost:3001/category/63acbc464adda1c5976cd89c  HTTP/1.1
