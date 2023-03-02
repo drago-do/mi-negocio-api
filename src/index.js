@@ -46,6 +46,11 @@ app.use("/user", require("./routes/user"));
 app.use("/product", require("./routes/product"));
 app.use("/category", require("./routes/category"));
 
+//Para ventas comandas etc
+app.use("/daysales", require("./routes/sales/daySales"));
+app.use("/itemorder", require("./routes/sales/itemorder"));
+app.use("/order", require("./routes/sales/order"));
+
 //Iniciando el servidor
 app.listen(app.get("port"), () => {
   console.log(`Server listening on port ${app.get("port")}`);

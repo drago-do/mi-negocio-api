@@ -7,7 +7,8 @@ Content-Type: application/json
   "description": "Cerveza de 250 ml",
   "price": 30,
   "image": "https://m.media-amazon.com/images/I/81UITv4OpWL._AC_SY445_.jpg",
-  "units" : 10
+  "units" : 10,
+  "category": "63acbba13bd411f44a60d04f"
 }
 
 ###
@@ -19,15 +20,12 @@ GET http://localhost:3001/product/63acbdfc64e9ea4c89edf6cf  HTTP/1.1
 
 
 ###
-PUT http://localhost:3001/product/63acbe2f5a4b9388f18ba5ba HTTP/1.1
+PUT http://localhost:3001/product/63acc1dcd344f1e651a22937 HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "Cerveza Cero",
-  "description": "Cerveza de 250 ml",
-  "price": 30,
-  "image": "none",
-  "category": "63acbba13bd411f44a60d04f"
+  
+  "image": "https://m.media-amazon.com/images/I/61vYdM6juBL.jpg"
 }
 
 ###

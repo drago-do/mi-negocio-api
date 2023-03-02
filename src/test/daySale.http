@@ -1,0 +1,22 @@
+###
+POST http://localhost:3001/daysales HTTP/1.1
+Content-Type: application/json
+
+{"dateTime":"2020-10-05T10:15:06.000Z",
+"dayName":"Monday",
+"sales":[{"id_timestamp":"5f7d8c5aefa7c5f7d8c5aefa7","name":"order1","items":[{"id_db":"5f7d8c5aefa7c5f7d8c5aefa7","name":"item1","price":10,"units":3}]}]}
+
+###
+GET http://localhost:3001/daysales  HTTP/1.1
+
+###
+GET http://localhost:3001/daysales/5f7d8c5aefa7c5f7d8c5aefa7  HTTP/1.1
+
+###
+PUT http://localhost:3001/daysales/5f7d8c5aefa7c5f7d8c5aefa7 HTTP/1.1
+Content-Type: application/json
+
+{"dayName":"Tuesday",
+"sales":[{"id_timestamp":"5f7d8c5aefa7c5f7d8c5c5aefa7","name":"order2","items":[{"id_db":"5f7d8c5aefa7c5f7d8c5aefa7","name":"item2","price":15,"units":4}]}]}
+
+DELETE http://localhost:3001/daysales/5f7d8c5aefa7c5f7d8c5aefa7 HTTP/1.1

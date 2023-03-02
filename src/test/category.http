@@ -2,10 +2,11 @@
 POST http://localhost:3001/category HTTP/1.1
 Content-Type: application/json
 
-{  "name": "Bebidassad",
-  "description": "Cerveza, Ron, Vodka",
-  "image":  "none"}
-
+{  "name": "Tlacoyo",
+  "description": "Rico...",
+  "image":  "https://m.media-amazon.com/images/I/71-rlUJ9kuL._SL1500_.jpg",
+  "parent":"63b302ed638adf73eda87e81"
+}
 ###
 POST http://localhost:3001/category HTTP/1.1
 Content-Type: application/json
