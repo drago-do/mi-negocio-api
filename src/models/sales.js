@@ -1,23 +1,22 @@
-const { Timestamp } = require("mongodb");
 const mongoose = require("mongoose");
 
-const itemSchema = mongoose.Schema(
-  {
-    id_db: { type: mongoose.Schema.Types.Mixed, required: true },
-    name: { type: String },
-    price: { type: Number },
-    units: { type: Number },
-  },
-  {
-    timestamps: true,
-  }
-);
+const itemOrderSchema = mongoose.Schema({
+  creationDate: { type: Number, required: true },
+  id_mongo: { type: mongoose.Schema.Types.ObjectId, ref: "products" },
+  price: { type: Number, required: true },
+  deliver: { type: Boolean },
+});
 
 const orderSchema = mongoose.Schema(
   {
-    id_timestamp: { type: mongoose.Schema.Types.Mixed, required: true },
-    name: { type: String },
-    items: { type: [itemSchema], default: [] },
+    id: { type: String, required: true, unique: true, index: true },
+    fullDeliver: { type: Boolean, required: true },
+    paid: { type: Boolean, required: true },
+    tableName: { type: String, required: true },
+    location: { type: [String] },
+    creationDate: { type: String },
+    products: [itemOrderSchema],
+    total: { type: Number, required: true },
   },
   {
     timestamps: true,
@@ -33,14 +32,13 @@ const daySalesSchema = mongoose.Schema(
       index: true,
     },
     dayName: { type: String, required: true },
-    activeDay: { type: Boolean, require: true },
   },
   {
     timestamps: true,
   }
 );
 
-const ItemOrder = mongoose.model("itemOrder", itemSchema);
+const ItemOrder = mongoose.model("itemOrder", itemOrderSchema);
 const Order = mongoose.model("order", orderSchema);
 const DaySales = mongoose.model("daySales", daySalesSchema);
 
