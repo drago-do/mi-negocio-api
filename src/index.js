@@ -47,9 +47,7 @@ app.use("/product", require("./routes/product"));
 app.use("/category", require("./routes/category"));
 
 //Para ventas comandas etc
-app.use("/daysales", require("./routes/sales/daySales"));
-app.use("/itemorder", require("./routes/sales/itemorder"));
-app.use("/order", require("./routes/sales/order"));
+app.use("/order", require("./routes/order"));
 
 //Iniciando el servidor
 app.listen(app.get("port"), () => {
