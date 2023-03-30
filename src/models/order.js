@@ -4,10 +4,13 @@ const orderSchema = mongoose.Schema(
   {
     id: { type: String, required: true, unique: true, index: true },
     madeByUser: { type: String, require: true },
-    userId: {type: mongoose.Schema.Types.ObjectId,
-    ref: "users",},
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
     fullDeliver: { type: Boolean, required: true },
-    paid: { type: Boolean, required: true },
+    paid: {
+      type: String,
+      enum: ["true", "wait", "false"],
+      default: "false",
+    },
     tableName: { type: String, required: true },
     location: { type: [String] },
     creationDate: { type: String },
