@@ -1,5 +1,7 @@
 const { Router } = require("express");
 const router = Router();
+const setCacheHeaders = require("./../middleware/cacheStorage");
+
 //Requerir el Schema para CRUD usuario
 const categorySchema = require("../models/category");
 
@@ -13,7 +15,7 @@ router.post("/", (req, res) => {
 });
 
 //Get all category's
-router.get("/", (req, res) => {
+router.get("/", setCacheHeaders, (req, res) => {
   categorySchema
     .find()
     .then((data) => res.json(data))

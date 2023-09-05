@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const dateTimeReq = require("./middleware/dateTimeReq");
 require("dotenv").config();
 
 const port = process.env.PORT || 3001;
@@ -37,6 +38,7 @@ mongoose
   .catch((e) => console.log(e));
 
 //Routes
+app.use(dateTimeReq);
 
 //Entrada General a la api
 app.use(require("./routes/index"));
@@ -48,6 +50,7 @@ app.use("/category", require("./routes/category"));
 
 //Para ventas comandas etc
 app.use("/order", require("./routes/order"));
+app.use("/daySales", require("./routes/daySales"));
 
 //Iniciando el servidor
 app.listen(app.get("port"), () => {

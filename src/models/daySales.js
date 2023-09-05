@@ -5,10 +5,9 @@ const daySalesSchema = mongoose.Schema(
     dateTime: {
       type: Date,
       required: true,
-      unique: true,
-      index: true,
     },
     dayName: { type: String, required: true },
+    daySale: { type: [] },
   },
   {
     timestamps: true,
