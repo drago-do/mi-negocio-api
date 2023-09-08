@@ -5,9 +5,10 @@ const daySalesSchema = mongoose.Schema(
     dateTime: {
       type: Date,
       required: true,
+      default: new Date(),
     },
-    dayName: { type: String, required: true },
-    daySale: { type: [] },
+    dayName: { type: String },
+    daySale: { type: [Object] },
   },
   {
     timestamps: true,

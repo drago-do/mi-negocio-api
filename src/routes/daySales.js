@@ -8,12 +8,12 @@ const orderSchema = require("../models/order");
 //Create daySale
 router.post("/", (req, res) => {
   const daySalesObject = daySalesSchema(req.body);
+  console.log(daySalesObject);
   console.log("daysales");
   daySalesObject
     .save()
     .then((data) => {
       console.log("insert");
-
       //Borrar base de datos order
       orderSchema.deleteMany({}, (err) => {
         if (err) {
